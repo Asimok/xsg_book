@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/lib" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/db/ConnDb.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/services/Login.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/servlet/LoginServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/BaseFilter_Albert_Frank_Check.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/BookMsg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/Dateadd.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/EmployeeNumberChecker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/EmptyChecker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/FaceMessage.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/FilterManage.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/GenerateRepasswordLink.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/MeetingMsg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/NullptrChecker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/PersonMsg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/RoomMessage.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/SetDays.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/SignMsg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/SqlInjChecker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/SuitableRoomMsg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/TimePartDelay.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/Timer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/TokenUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/UserRepasswoed.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/XXTEAUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/dateToString.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/emailChecker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/getUUID.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/intChecker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/intTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/numAndWordTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/password.dat" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/password2.dat" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/sendEmail.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/tojson.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/tomd5.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/tools/tounicode.java" charset="GBK" />
+  </component>
+</project>
