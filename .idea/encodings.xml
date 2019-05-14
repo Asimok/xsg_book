@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/lib" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/db/ConnDb.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/services/Login.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/services/Regist.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/servlet/LoginServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/servlet/RegistServlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/tools/BaseFilter_Albert_Frank_Check.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/tools/BookMsg.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/tools/Dateadd.java" charset="GBK" />
@@ -39,5 +41,6 @@
     <file url="file://$PROJECT_DIR$/src/tools/tojson.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/tools/tomd5.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/tools/tounicode.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>
