@@ -77,13 +77,13 @@ public class XXTEAUtil {
         sum = q * delta;
         while (sum != 0) {
             e = sum >>> 2 & 3;
-        for (p = n; p > 0; p--) {
-            z = v[p - 1];
-            y = v[p] -= (z >>> 5 ^ y << 2) + (y >>> 3 ^ z << 4) ^ (sum ^ y) + (k[p & 3 ^ e] ^ z);
-        }
-        z = v[n];
-        y = v[0] -= (z >>> 5 ^ y << 2) + (y >>> 3 ^ z << 4) ^ (sum ^ y) + (k[p & 3 ^ e] ^ z);
-        sum = sum - delta;
+            for (p = n; p > 0; p--) {
+                z = v[p - 1];
+                y = v[p] -= (z >>> 5 ^ y << 2) + (y >>> 3 ^ z << 4) ^ (sum ^ y) + (k[p & 3 ^ e] ^ z);
+            }
+            z = v[n];
+            y = v[0] -= (z >>> 5 ^ y << 2) + (y >>> 3 ^ z << 4) ^ (sum ^ y) + (k[p & 3 ^ e] ^ z);
+            sum = sum - delta;
         }
         return v;
     }

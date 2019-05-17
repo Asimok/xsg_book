@@ -1,11 +1,11 @@
 package tools;
 
-public class tounicode{
-    
+public class tounicode {
+
     /*
      * gbEncoding(final String gbString) 中文转unicode编码
      * decodeUnicode(final String dataStr) unicode编码转中文
-     * 
+     *
      */
     public static String gbEncoding(final String gbString) {
         char[] utfBytes = gbString.toCharArray();
@@ -19,6 +19,7 @@ public class tounicode{
         }
         return unicodeBytes;
     }
+
     /*
      * decodeUnicode(final String dataStr) unicode编码转中文
      */
@@ -40,5 +41,5 @@ public class tounicode{
         }
         return buffer.toString();
     }
-    
+
 }

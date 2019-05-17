@@ -1,8 +1,10 @@
 package servlet;
 /*注册Servlet*/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import tools.tomd5;
 
 public class RegistServlet extends HttpServlet {
     String isError;//isError 判断出错信息
+
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +42,7 @@ public class RegistServlet extends HttpServlet {
         /*通过键值对获取参数*/
 
         String Password = tomd5.tomd5(jsonObject.getString("mima"));//生成MD5编码   MD5加密
-        String Name =  jsonObject.getString("Name");  //Unicode解码中文字符
+        String Name = jsonObject.getString("Name");  //Unicode解码中文字符
         String Sex = jsonObject.getString("Sex");//获取性别
         String PhoneNumber = jsonObject.getString("PhoneNumber");//获取电话号
         String Email = jsonObject.getString("Email");//获取邮箱
@@ -48,45 +51,36 @@ public class RegistServlet extends HttpServlet {
         FilterManage check1 = new FilterManage();
         check1.addChecker(new EmployeeNumberChecker());
 
-            //如果员工号合法
+        //如果员工号合法
 
 
-
-                //可以注册  "status":"0" 返回给客户端解析
-                //	isError 判断出错信息
-                isError = Regist.Regist(Password,Name,Sex,PhoneNumber,Email);
-                //调用Regist类方法  注册
-                if(isError.trim().toString().equals("注册成功"))
-                {
-                    //如果注册成功
-                    System.out.println("写入成功");
-                    PrintWriter out = response.getWriter();
-                    String  info_json  = "{\"status\":\"0\"}";//成功返回0
-                    System.out.println(info_json);
-                    out.write(info_json);
-                    out.flush();
-                    out.close();
-                }
-
-
-                else
-
-                {
-                    //员工号已注册
-                    response.setContentType("text/html;charset=utf-8");
-                    PrintWriter out = response.getWriter();
+        //可以注册  "status":"0" 返回给客户端解析
+        //	isError 判断出错信息
+        isError = Regist.Regist(Password, Name, Sex, PhoneNumber, Email);
+        System.out.println("isError  " + isError);
+        //调用Regist类方法  注册
+        if (isError.trim().equals("0")) {
+            //如果注册成功
+            System.out.println("写入成功");
+            PrintWriter out = response.getWriter();
+            String info_json = "{\"status\":\"0\"}";//成功返回0
+            System.out.println(info_json);
+            out.write(info_json);
+            out.flush();
+            out.close();
+        } else {
+            //员工号已注册
+            response.setContentType("text/html;charset=utf-8");
+            PrintWriter out = response.getWriter();
 //               封装成JSON格式发送回客户端
-                    String  info_json  = "{\"status\":\"-1\"}";//注册失败！
-                    System.out.println(info_json);
-                    out.write(info_json);
-                    out.flush();
-                    out.close();
-                }
+            String info_json = "{\"status\":\"-1\"}";//注册失败！
+            System.out.println(info_json);
+            out.write(info_json);
+            out.flush();
+            out.close();
+        }
 
-            }
-
-
-
+    }
 
 
     @Override

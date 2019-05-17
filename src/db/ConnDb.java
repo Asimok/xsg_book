@@ -3,6 +3,7 @@ package db;
  * 连接数据库常量
  *
  * */
+
 import java.sql.*;
 
 public class ConnDb {
@@ -13,10 +14,11 @@ public class ConnDb {
             + "useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";
 
     public Connection conn() {
+
         try {
             Class.forName(driverName);
             try {
-                Connection conn = DriverManager.getConnection(url,username,password);
+                Connection conn = DriverManager.getConnection(url, username, password);
                 return conn;
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
@@ -30,4 +32,5 @@ public class ConnDb {
         }
         return null;
     }
+
 }

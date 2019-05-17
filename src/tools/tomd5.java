@@ -4,10 +4,9 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 
 public class tomd5 {
-	
-	 /**
+
+    /**
      * 对字符串md5加密(小写+字母)
-     *
      */
     public static String tomd5(String str) {
         try {
@@ -19,12 +18,12 @@ public class tomd5 {
             // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
             return new BigInteger(1, md.digest()).toString(16);
         } catch (Exception e) {
-           e.printStackTrace();
-           return null;
+            e.printStackTrace();
+            return null;
         }
     }
-    
-    
+
+
     /**
      * 对字符串md5加密(大写+数字)
      *
@@ -56,7 +55,7 @@ public class tomd5 {
 //            return null;
 //        }
 //    }
- 
+
 //         public static void main(String[] args) {
 //        	 	String md5 = MD5("password");
 //        	 	String md52 = tomd5("password22");
