@@ -1,17 +1,17 @@
 package tools;
 
 /*
- * ÔİÊ±´æ´¢ÕÒ»ØÃÜÂëÔ±¹¤ĞÅÏ¢
+ * æš‚æ—¶å­˜å‚¨æ‰¾å›å¯†ç å‘˜å·¥ä¿¡æ¯
  * */
 public class User {
 
-    // ÓÃ»§Ãû  
+    // ç”¨æˆ·å  
     private String userName;
-    // ÃÜÂë  
+    // å¯†ç   
     private String password;
     // email  
     private String email;
-    // ÊÇ·ñ¼¤»î  
+    // æ˜¯å¦æ¿€æ´»  
 
     public String getUserName() {
         return userName;

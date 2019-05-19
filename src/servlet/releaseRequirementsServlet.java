@@ -18,22 +18,22 @@ public class releaseRequirementsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/html;charset=utf-8");
-        /*ÉèÖÃ×Ö·û¼¯Îª'UTF-8'*/
-        request.setCharacterEncoding("utf-8");
-        System.out.println("Á¬½Ó³É¹¦·´À¡");// ²âÊÔÊÇ·ñ³É¹¦Á¬½Ó
-        StringBuffer json2 = new StringBuffer();// ×Ö·ûÁ÷
+        response.setContentType("text/html;charset=UTF-8");
+        /*è®¾ç½®å­—ç¬¦é›†ä¸º'UTF-8'*/
+        request.setCharacterEncoding("UTF-8");
+        System.out.println("è¿æ¥æˆåŠŸåé¦ˆ");// æµ‹è¯•æ˜¯å¦æˆåŠŸè¿æ¥
+        StringBuffer json2 = new StringBuffer();// å­—ç¬¦æµ
         String line = null;
-        BufferedReader reader = request.getReader();// ¶ÁÈ¡Á÷
+        BufferedReader reader = request.getReader();// è¯»å–æµ
         while ((line = reader.readLine()) != null) {
-            json2.append(line);// ½ÓÊÜµÄÊÇJSON¸ñÊ½
+            json2.append(line);// æ¥å—çš„æ˜¯JSONæ ¼å¼
         }
 
-        System.out.println(json2);//µÃµ½µÄÊÇJSON¸ñÊ½
-        // °ÑµÃµ½µÄ×Ö·û´®·â×°ÎªJSON£¬ÔÙ»ñÈ¡ÀïÃæµÄ´«¹ıÀ´µÄ¼üÖµ¶Ô
+        System.out.println(json2);//å¾—åˆ°çš„æ˜¯JSONæ ¼å¼
+        // æŠŠå¾—åˆ°çš„å­—ç¬¦ä¸²å°è£…ä¸ºJSONï¼Œå†è·å–é‡Œé¢çš„ä¼ è¿‡æ¥çš„é”®å€¼å¯¹
 
         JSONObject jsonObject = JSONObject.fromObject(json2.toString());
-        /*Í¨¹ı¼üÖµ¶Ô»ñÈ¡²ÎÊı*/
+        /*é€šè¿‡é”®å€¼å¯¹è·å–å‚æ•°*/
         String user = jsonObject.getString("user");
         String telephone = jsonObject.getString("telephone");
         String province = jsonObject.getString("province");
@@ -44,15 +44,15 @@ public class releaseRequirementsServlet extends HttpServlet {
         String booknum = jsonObject.getString("booknum");
         String suitage = jsonObject.getString("suitage");
         String bookname = jsonObject.getString("bookname");
-
+        String detailbook = jsonObject.getString("detailbook");
        String sucess= releaseRequirements.addRequirement( user,  telephone,  province,
                  city,  xian,  detailedad,  bookclass,
-                 booknum,  suitage,  bookname);
+                 booknum,  suitage,  bookname,detailbook);
        if(sucess.equals("0"))
        {
            response.setContentType("text/html;charset=utf-8");
            PrintWriter out = response.getWriter();
-           //	          ·â×°³ÉJSON¸ñÊ½·¢ËÍ»Ø¿Í»§¶Ë
+           //	          å°è£…æˆJSONæ ¼å¼å‘é€å›å®¢æˆ·ç«¯
            tojson<String, String> info_json = new tojson<>();
            info_json.put("Status", "0");
            out.write(info_json.toString());
@@ -63,7 +63,7 @@ public class releaseRequirementsServlet extends HttpServlet {
        {
            response.setContentType("text/html;charset=utf-8");
            PrintWriter out = response.getWriter();
-           //	          ·â×°³ÉJSON¸ñÊ½·¢ËÍ»Ø¿Í»§¶Ë
+           //	          å°è£…æˆJSONæ ¼å¼å‘é€å›å®¢æˆ·ç«¯
            tojson<String, String> info_json = new tojson<>();
            info_json.put("Status", "-1");
            out.write(info_json.toString());

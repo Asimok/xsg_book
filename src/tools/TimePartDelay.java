@@ -1,7 +1,7 @@
 package tools;
 /*
- * date.after(begin):date±íÊ¾µÄÊ±¼äÊÇ·ñÔÚbegin´ú±íµÄÊ±¼äÖ®ºó£¬ÊÇ·µ»Øtrue,·ñÔò·µ»Øfalse
- * date.after(end):date±íÊ¾µÄÊ±¼äÊÇ·ñÔÚend´ú±íµÄÊ±¼äÖ®ºó£¬ÊÇ·µ»Øtrue,·ñÔò·µ»Øfalse
+ * date.after(begin):dateè¡¨ç¤ºçš„æ—¶é—´æ˜¯å¦åœ¨beginä»£è¡¨çš„æ—¶é—´ä¹‹åï¼Œæ˜¯è¿”å›true,å¦åˆ™è¿”å›false
+ * date.after(end):dateè¡¨ç¤ºçš„æ—¶é—´æ˜¯å¦åœ¨endä»£è¡¨çš„æ—¶é—´ä¹‹åï¼Œæ˜¯è¿”å›true,å¦åˆ™è¿”å›false
  * */
 
 import java.util.Calendar;
@@ -9,27 +9,27 @@ import java.util.Date;
 
 public class TimePartDelay {
     public static boolean belongCalender(Date nowTime, Date beginTime, Date endTime) {
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar date = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
         date.setTime(nowTime);
 
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar begin = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
         begin.setTime(beginTime);
 
 
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar end = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
         end.setTime(endTime);
         if (date.after(begin) && date.before(end)) {
-            /*date.after(begin):date±íÊ¾µÄÊ±¼äÊÇ·ñÔÚbegin´ú±íµÄÊ±¼äÖ®ºó£¬ÊÇ·µ»Øtrue,·ñÔò·µ»Øfalse
-             * date.after(end):date±íÊ¾µÄÊ±¼äÊÇ·ñÔÚend´ú±íµÄÊ±¼äÖ®ºó£¬ÊÇ·µ»Øtrue,·ñÔò·µ»Øfalse
+            /*date.after(begin):dateè¡¨ç¤ºçš„æ—¶é—´æ˜¯å¦åœ¨beginä»£è¡¨çš„æ—¶é—´ä¹‹åï¼Œæ˜¯è¿”å›true,å¦åˆ™è¿”å›false
+             * date.after(end):dateè¡¨ç¤ºçš„æ—¶é—´æ˜¯å¦åœ¨endä»£è¡¨çš„æ—¶é—´ä¹‹åï¼Œæ˜¯è¿”å›true,å¦åˆ™è¿”å›false
              * */
             return true;
         } else {
@@ -39,26 +39,26 @@ public class TimePartDelay {
     }
 
     public static boolean beforeCalender(Date nowTime, Date beginTime) {
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar date = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
         date.setTime(nowTime);
 
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar begin = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
         begin.setTime(beginTime);
 
 
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar end = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
 //	 end.setTime(endTime);
         if (date.before(begin)) {
-            /*date.after(begin):date±íÊ¾µÄÊ±¼äÊÇ·ñÔÚbegin´ú±íµÄÊ±¼äÖ®ºó£¬ÊÇ·µ»Øtrue,·ñÔò·µ»Øfalse
+            /*date.after(begin):dateè¡¨ç¤ºçš„æ—¶é—´æ˜¯å¦åœ¨beginä»£è¡¨çš„æ—¶é—´ä¹‹åï¼Œæ˜¯è¿”å›true,å¦åˆ™è¿”å›false
              *
              * */
             return true;
@@ -69,27 +69,27 @@ public class TimePartDelay {
     }
 
     public static boolean afterCalender(Date nowTime, Date endTime) {
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar date = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
         date.setTime(nowTime);
 
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar begin = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
 //	 begin.setTime(beginTime);
 
 
-        /* Ê¹ÓÃÄ¬ÈÏÊ±ÇøºÍÓïÑÔ»·¾³»ñµÃÒ»¸öÈÕÀú*/
+        /* ä½¿ç”¨é»˜è®¤æ—¶åŒºå’Œè¯­è¨€ç¯å¢ƒè·å¾—ä¸€ä¸ªæ—¥å†*/
         Calendar end = Calendar.getInstance();
 
-        /* Ê¹ÓÃ¸ø¶¨µÄDate ÉèÖÃ´ËCalendarµÄÊ±¼ä*/
+        /* ä½¿ç”¨ç»™å®šçš„Date è®¾ç½®æ­¤Calendarçš„æ—¶é—´*/
 //	 end.setTime(endTime);
         if (date.after(end)) {
             /*
-             * date.after(end):date±íÊ¾µÄÊ±¼äÊÇ·ñÔÚend´ú±íµÄÊ±¼äÖ®ºó£¬ÊÇ·µ»Øtrue,·ñÔò·µ»Øfalse
+             * date.after(end):dateè¡¨ç¤ºçš„æ—¶é—´æ˜¯å¦åœ¨endä»£è¡¨çš„æ—¶é—´ä¹‹åï¼Œæ˜¯è¿”å›true,å¦åˆ™è¿”å›false
              * */
             return true;
         } else {

@@ -1,7 +1,7 @@
 package tools;
 
 /*
- * Ô±¹¤ºÅºÏ·¨ĞÔ¼ì²é
+ * å‘˜å·¥å·åˆæ³•æ€§æ£€æŸ¥
  *
  * */
 
@@ -11,10 +11,10 @@ public class EmployeeNumberChecker implements BaseFilter_Albert_Frank_Check {
 
         if (!numAndWordTest.numAndWordTest(sin)) {
             System.out.println(getClass().getName() + "  error");
-            System.out.println(sin + "    ÕË»§Ãû·Ç·¨£¬ÇëÖØĞÂÊäÈë");
+            System.out.println(sin + "    è´¦æˆ·åéæ³•ï¼Œè¯·é‡æ–°è¾“å…¥");
             return false;
         }
-        System.out.println(sin + "    ÕË»§ÃûºÏ·¨");
+        System.out.println(sin + "    è´¦æˆ·ååˆæ³•");
         return true;
     }
 

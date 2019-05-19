@@ -6,7 +6,7 @@ import org.apache.commons.codec.binary.Base64;
 public class XXTEAUtil {
 
     /**
-     * Ê¹ÓÃÃÜÔ¿¼ÓÃÜÊı¾İ
+     * ä½¿ç”¨å¯†é’¥åŠ å¯†æ•°æ®
      */
     public static byte[] encrypt(byte[] plain, byte[] key) {
         if (plain.length == 0) {
@@ -16,7 +16,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * Ê¹ÓÃÃÜÔ¿½âÃÜ
+     * ä½¿ç”¨å¯†é’¥è§£å¯†
      */
     public static byte[] decrypt(byte[] cipher, byte[] key) {
         if (cipher.length == 0) {
@@ -26,7 +26,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * Ê¹ÓÃÃÜÔ¿¼ÓÃÜÊı¾İ
+     * ä½¿ç”¨å¯†é’¥åŠ å¯†æ•°æ®
      */
     public static int[] encrypt(int[] v, int[] k) {
         int n = v.length - 1;
@@ -57,7 +57,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * Ê¹ÓÃÃÜÔ¿½âÃÜÊı¾İ
+     * ä½¿ç”¨å¯†é’¥è§£å¯†æ•°æ®
      */
     public static int[] decrypt(int[] v, int[] k) {
         int n = v.length - 1;
@@ -89,7 +89,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * ×Ö½ÚÊı×é×ª»»ÎªÕûĞÍÊı×é
+     * å­—èŠ‚æ•°ç»„è½¬æ¢ä¸ºæ•´å‹æ•°ç»„
      */
     private static int[] toIntArray(byte[] data, boolean includeLength) {
         int n = (((data.length & 3) == 0) ? (data.length >>> 2) : ((data.length >>> 2) + 1));
@@ -109,7 +109,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * ÕûĞÍÊı×é×ª»»Îª×Ö½ÚÊı×é
+     * æ•´å‹æ•°ç»„è½¬æ¢ä¸ºå­—èŠ‚æ•°ç»„
      */
     private static byte[] toByteArray(int[] data, boolean includeLength) {
         int n = data.length << 2;
@@ -131,7 +131,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * ÏÈXXXTEA¼ÓÃÜ£¬ºóBase64¼ÓÃÜ
+     * å…ˆXXXTEAåŠ å¯†ï¼ŒåBase64åŠ å¯†
      */
     public static String encrypt(String plain, String key) {
         String cipher = "";
@@ -145,7 +145,7 @@ public class XXTEAUtil {
     }
 
     /**
-     * ÏÈBase64½âÃÜ£¬ºóXXXTEA½âÃÜ
+     * å…ˆBase64è§£å¯†ï¼ŒåXXXTEAè§£å¯†
      */
     public static String decrypt(String cipher, String key) {
         String plain = "";

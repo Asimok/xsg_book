@@ -66,12 +66,12 @@ public class SuitableRoomMsg {
     }
 
     public String toString() {
-        return "Time£º" + Time +
-                "Days£º" + Days +
+        return "Timeï¼š" + Time +
+                "Daysï¼š" + Days +
                 "Functions" + Functions +
-                "RoomNumber£º" + RoomNumber +
-                "Building£º" + BuildingNumber +
-                "Size£º" + Size +
-                "IsMeeting£º" + IsMeeting;
+                "RoomNumberï¼š" + RoomNumber +
+                "Buildingï¼š" + BuildingNumber +
+                "Sizeï¼š" + Size +
+                "IsMeetingï¼š" + IsMeeting;
     }
 }

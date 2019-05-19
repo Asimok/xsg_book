@@ -2,9 +2,9 @@ package tools;
 
 /*
  *
- * genToken() Ëæ»úÉú³Étoken
+ * genToken() éšæœºç”Ÿæˆtoken
  *
- * verificationToken(String token) ½âÃÜ²¢ÇÒÅĞ¶Ï¸Ãtoken×´Ì¬
+ * verificationToken(String token) è§£å¯†å¹¶ä¸”åˆ¤æ–­è¯¥tokençŠ¶æ€
  *
  * */
 
@@ -21,18 +21,18 @@ public class TokenUtil {
     private static Random rand = new Random();
 
     /**
-     * XXTEA¼ÓÃÜ½âÃÜµÄÃÜÔ¿
+     * XXTEAåŠ å¯†è§£å¯†çš„å¯†é’¥
      */
     private static String secKey = "mq";
 
     /**
-     * token³¬Ê±ÃÅÏŞ(Ìì)
+     * tokenè¶…æ—¶é—¨é™(å¤©)
      */
     private static long expire = 30;
 
 
     /**
-     * ÑéÖ¤Âë×Ö·ûÊı
+     * éªŒè¯ç å­—ç¬¦æ•°
      */
     private static int charCount = 4;
 
@@ -45,54 +45,54 @@ public class TokenUtil {
         long timestamp = System.currentTimeMillis();
         String token = null;
 
-        System.out.println("ÃÜÔ¿:  " + secKey);
-        System.out.println("Ç°×º:  " + sb.toString());//Ç°×º
-        System.out.println("Ê±¼ä´Á:  " + timestamp);//Ê±¼ä´Á
+        System.out.println("å¯†é’¥:  " + secKey);
+        System.out.println("å‰ç¼€:  " + sb.toString());//å‰ç¼€
+        System.out.println("æ—¶é—´æˆ³:  " + timestamp);//æ—¶é—´æˆ³
 
         token = String.format("%s_%d", sb.toString(), timestamp);
-        System.out.println("Î´¼ÓÃÜµÄtoken: " + token);
+        System.out.println("æœªåŠ å¯†çš„token: " + token);
 
         token = XXTEAUtil.encrypt(token, secKey);
-        System.out.println("¼ÓÃÜµÄtoken: " + token);
+        System.out.println("åŠ å¯†çš„token: " + token);
         return token;
     }
 
     public static String verificationToken(String token) {
-        //Ô­Ê¼
-        System.out.println("´«ÈëµÄĞèÒª½âÎöµÄtoken:" + token);
+        //åŸå§‹
+        System.out.println("ä¼ å…¥çš„éœ€è¦è§£æçš„token:" + token);
 
-        //½âÃÜ
+        //è§£å¯†
         String plainText = XXTEAUtil.decrypt(token, secKey);
-        System.out.println("½âÃÜµÄtoken: " + plainText);
+        System.out.println("è§£å¯†çš„token: " + plainText);
 
 
         if (StringUtils.isBlank(plainText)) {
-            System.out.println("½âÃÜÊ§°Ü,token¿ÉÄÜÔâµ½´Û¸Ä");
-            return "½âÃÜÊ§°Ü";
+            System.out.println("è§£å¯†å¤±è´¥,tokenå¯èƒ½é­åˆ°ç¯¡æ”¹");
+            return "è§£å¯†å¤±è´¥";
         }
 
 
         String[] plainTextArr = plainText.split("_");
         if (plainTextArr.length != 2) {
-            System.out.println("tokenÊı¾İ¸ñÊ½´íÎó");
-            return "Êı¾İ¸ñÊ½´íÎó";
+            System.out.println("tokenæ•°æ®æ ¼å¼é”™è¯¯");
+            return "æ•°æ®æ ¼å¼é”™è¯¯";
         }
-        //   System.out.println("Êı¾İ¸ñÊ½: "+plainTextArr);
+        //   System.out.println("æ•°æ®æ ¼å¼: "+plainTextArr);
 
 
         long timestamp = 0;
         try {
             timestamp = Long.parseLong(plainTextArr[1]);
         } catch (NumberFormatException e) {
-            System.out.println("Ê±¼ä´ÁÎŞĞ§");
-            return "Ê±¼ä´ÁÎŞĞ§";
+            System.out.println("æ—¶é—´æˆ³æ— æ•ˆ");
+            return "æ—¶é—´æˆ³æ— æ•ˆ";
         }
 
 
         if ((System.currentTimeMillis() - timestamp) > TimeUnit.MILLISECONDS.convert(expire + 5, TimeUnit.DAYS)) {
-            System.out.println("tokenÒÑ¹ıÆÚ");
-            return "tokenÒÑ¹ıÆÚ";
+            System.out.println("tokenå·²è¿‡æœŸ");
+            return "tokenå·²è¿‡æœŸ";
         }
-        return "³É¹¦";
+        return "æˆåŠŸ";
     }
 }

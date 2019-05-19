@@ -1,7 +1,7 @@
 package tools;
 
 /*
- * 时间信息临时储存
+ * 鏃堕棿淇℃伅涓存椂鍌ㄥ瓨
  *
  * */
 public class SetDays {

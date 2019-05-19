@@ -1,18 +1,18 @@
 package tools;
 
 /*
- * 检测输入内容是否为整型
+ * 妫�娴嬭緭鍏ュ唴瀹规槸鍚︿负鏁村瀷
  *
  * */
 public class intChecker implements BaseFilter_Albert_Frank_Check {
     public boolean doCheck(String sin) {
         if (!intTest.intTest(sin)) {
             System.out.println(getClass().getName() + "  error");
-            System.out.println(sin + "   容量非法，请重新输入");
+            System.out.println(sin + "   瀹归噺闈炴硶锛岃閲嶆柊杈撳叆");
             return false;
         }
         // TODO Auto-generated method stub
-        System.out.println(sin + "    容量合法");
+        System.out.println(sin + "    瀹归噺鍚堟硶");
         return true;
     }
 

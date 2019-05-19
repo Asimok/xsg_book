@@ -6,16 +6,16 @@ import java.security.MessageDigest;
 public class tomd5 {
 
     /**
-     * ¶Ô×Ö·û´®md5¼ÓÃÜ(Ğ¡Ğ´+×ÖÄ¸)
+     * å¯¹å­—ç¬¦ä¸²md5åŠ å¯†(å°å†™+å­—æ¯)
      */
     public static String tomd5(String str) {
         try {
-            // Éú³ÉÒ»¸öMD5¼ÓÃÜ¼ÆËãÕªÒª
+            // ç”Ÿæˆä¸€ä¸ªMD5åŠ å¯†è®¡ç®—æ‘˜è¦
             MessageDigest md = MessageDigest.getInstance("MD5");
-            // ¼ÆËãmd5º¯Êı
+            // è®¡ç®—md5å‡½æ•°
             md.update(str.getBytes());
-            // digest()×îºóÈ·¶¨·µ»Ømd5 hashÖµ£¬·µ»ØÖµÎª8Îª×Ö·û´®¡£ÒòÎªmd5 hashÖµÊÇ16Î»µÄhexÖµ£¬Êµ¼ÊÉÏ¾ÍÊÇ8Î»µÄ×Ö·û
-            // BigIntegerº¯ÊıÔò½«8Î»µÄ×Ö·û´®×ª»»³É16Î»hexÖµ£¬ÓÃ×Ö·û´®À´±íÊ¾£»µÃµ½×Ö·û´®ĞÎÊ½µÄhashÖµ
+            // digest()æœ€åç¡®å®šè¿”å›md5 hashå€¼ï¼Œè¿”å›å€¼ä¸º8ä¸ºå­—ç¬¦ä¸²ã€‚å› ä¸ºmd5 hashå€¼æ˜¯16ä½çš„hexå€¼ï¼Œå®é™…ä¸Šå°±æ˜¯8ä½çš„å­—ç¬¦
+            // BigIntegerå‡½æ•°åˆ™å°†8ä½çš„å­—ç¬¦ä¸²è½¬æ¢æˆ16ä½hexå€¼ï¼Œç”¨å­—ç¬¦ä¸²æ¥è¡¨ç¤ºï¼›å¾—åˆ°å­—ç¬¦ä¸²å½¢å¼çš„hashå€¼
             return new BigInteger(1, md.digest()).toString(16);
         } catch (Exception e) {
             e.printStackTrace();
@@ -25,22 +25,22 @@ public class tomd5 {
 
 
     /**
-     * ¶Ô×Ö·û´®md5¼ÓÃÜ(´óĞ´+Êı×Ö)
+     * å¯¹å­—ç¬¦ä¸²md5åŠ å¯†(å¤§å†™+æ•°å­—)
      *
      */
-    ///´óĞ´
+    ///å¤§å†™
 //    public static String MD5(String s) {
 //        char hexDigits[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};       
 // 
 //        try {
 //            byte[] btInput = s.getBytes();
-//            // »ñµÃMD5ÕªÒªËã·¨µÄ MessageDigest ¶ÔÏó
+//            // è·å¾—MD5æ‘˜è¦ç®—æ³•çš„ MessageDigest å¯¹è±¡
 //            MessageDigest mdInst = MessageDigest.getInstance("MD5");
-//            // Ê¹ÓÃÖ¸¶¨µÄ×Ö½Ú¸üĞÂÕªÒª
+//            // ä½¿ç”¨æŒ‡å®šçš„å­—èŠ‚æ›´æ–°æ‘˜è¦
 //            mdInst.update(btInput);
-//            // »ñµÃÃÜÎÄ
+//            // è·å¾—å¯†æ–‡
 //            byte[] md = mdInst.digest();
-//            // °ÑÃÜÎÄ×ª»»³ÉÊ®Áù½øÖÆµÄ×Ö·û´®ĞÎÊ½
+//            // æŠŠå¯†æ–‡è½¬æ¢æˆåå…­è¿›åˆ¶çš„å­—ç¬¦ä¸²å½¢å¼
 //            int j = md.length;
 //            char str[] = new char[j * 2];
 //            int k = 0;

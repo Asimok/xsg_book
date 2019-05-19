@@ -1,13 +1,13 @@
 package tools;
 
 /**
- * Éú³ÉÕÊ»§¼¤»î¡¢ÖØĞÂÉèÖÃÃÜÂëµÄÁ´½Ó
+ * ç”Ÿæˆå¸æˆ·æ¿€æ´»ã€é‡æ–°è®¾ç½®å¯†ç çš„é“¾æ¥
  */
 public class GenerateRepasswordLink {
 
 
     /**
-     * Éú³ÉÖØÉèÃÜÂëµÄÁ´½Ó
+     * ç”Ÿæˆé‡è®¾å¯†ç çš„é“¾æ¥
      */
     public static String generateResetPwdLink(User user) {
         return "http://39.96.68.13:8080/SmartRoom/resetPassword.jsp";

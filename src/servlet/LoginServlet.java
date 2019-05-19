@@ -16,7 +16,7 @@ import tools.tojson;
 import tools.tomd5;
 
 /*
- * µÇÂ¼ servlet
+ * ç™»å½• servlet
  *
  * */
 public class LoginServlet extends HttpServlet {
@@ -26,50 +26,50 @@ public class LoginServlet extends HttpServlet {
                           HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=utf-8");
-        /*ÉèÖÃ×Ö·û¼¯Îª'UTF-8'*/
+        /*è®¾ç½®å­—ç¬¦é›†ä¸º'UTF-8'*/
         request.setCharacterEncoding("utf-8");
-        System.out.println("Á¬½Ó³É¹¦·´À¡  LoginServlet");// ²âÊÔÊÇ·ñ³É¹¦Á¬½Ó
-        StringBuffer json1 = new StringBuffer();// ×Ö·ûÁ÷
+        System.out.println("è¿æ¥æˆåŠŸåé¦ˆ  LoginServlet");// æµ‹è¯•æ˜¯å¦æˆåŠŸè¿æ¥
+        StringBuffer json1 = new StringBuffer();// å­—ç¬¦æµ
         String line = null;
-        BufferedReader reader = request.getReader();// ¶ÁÈ¡Á÷
+        BufferedReader reader = request.getReader();// è¯»å–æµ
         while ((line = reader.readLine()) != null) {
-            json1.append(line);// ½ÓÊÜµÄÊÇJSON¸ñÊ½
+            json1.append(line);// æ¥å—çš„æ˜¯JSONæ ¼å¼
         }
 
-        System.out.println("´«ÈëµÄ" + json1);//µÃµ½µÄÊÇJSON¸ñÊ½
+        System.out.println("ä¼ å…¥çš„" + json1);//å¾—åˆ°çš„æ˜¯JSONæ ¼å¼
 
         JSONObject jsonObject = JSONObject.fromObject(json1.toString());
-        String zhanghu = jsonObject.getString("zhanghu");//»ñÈ¡Json¼üÖµ¶Ô
-        String mima = tomd5.tomd5(jsonObject.getString("mima"));//¶ÔÃÜÂë¾ÍĞĞMD5¼ÓÃÜ
+        String zhanghu = jsonObject.getString("zhanghu");//è·å–Jsoné”®å€¼å¯¹
+        String mima = tomd5.tomd5(jsonObject.getString("mima"));//å¯¹å¯†ç å°±è¡ŒMD5åŠ å¯†
 
-        System.out.println("´«ÈëµÄÕË»§ " + zhanghu);//Êä³öÕË»§¡¢ÃÜÂë¡¢Token£¬·½±ã²é¿´
-        System.out.println("´«ÈëµÄÃÜÂë " + mima);
+        System.out.println("ä¼ å…¥çš„è´¦æˆ· " + zhanghu);//è¾“å‡ºè´¦æˆ·ã€å¯†ç ã€Tokenï¼Œæ–¹ä¾¿æŸ¥çœ‹
+        System.out.println("ä¼ å…¥çš„å¯†ç  " + mima);
 
 
-        /*¶ÔÕË»§½øĞĞÃüÁî×¢ÈëÒì³£¼ì²â*/
+        /*å¯¹è´¦æˆ·è¿›è¡Œå‘½ä»¤æ³¨å…¥å¼‚å¸¸æ£€æµ‹*/
 
 
         boolean in = Login.selectNumberin(zhanghu);
         if (in) {
-            String Password = Login.selectNumber(zhanghu);//µ÷ÓÃloginÀà·½·¨²éÑ¯ÓÃ»§ÃÜÂë
+            String Password = Login.selectNumber(zhanghu);//è°ƒç”¨loginç±»æ–¹æ³•æŸ¥è¯¢ç”¨æˆ·å¯†ç 
 
             if (Password.equals(mima)) {
                 response.setContentType("text/html;charset=utf-8");
                 PrintWriter out = response.getWriter();
-//	          ·â×°³ÉJSON¸ñÊ½·¢ËÍ»Ø¿Í»§¶Ë
+//	          å°è£…æˆJSONæ ¼å¼å‘é€å›å®¢æˆ·ç«¯
                 tojson<String, String> info_json = new tojson<>();
                 info_json.put("Status", "0");
 
-                System.out.println("µÇÂ½³É¹¦  " + info_json.toString());
+                System.out.println("ç™»é™†æˆåŠŸ  " + info_json.toString());
                 out.write(info_json.toString());
 
                 out.flush();
                 out.close();
             } else {
-                //Èç¹ûÃÜÂë´íÎó
+                //å¦‚æœå¯†ç é”™è¯¯
                 response.setContentType("text/html;charset=utf-8");
                 PrintWriter out = response.getWriter();
-//	          ·â×°³ÉJSON¸ñÊ½·¢ËÍ»Ø¿Í»§¶Ë       
+//	          å°è£…æˆJSONæ ¼å¼å‘é€å›å®¢æˆ·ç«¯       
                 tojson<String, String> info_json = new tojson<>();
                 info_json.put("Status", "-1");
 
@@ -82,10 +82,10 @@ public class LoginServlet extends HttpServlet {
             }
 
         } else {
-            //ÕË»§²»´æÔÚ
+            //è´¦æˆ·ä¸å­˜åœ¨
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out = response.getWriter();
-            //	          ·â×°³ÉJSON¸ñÊ½·¢ËÍ»Ø¿Í»§¶Ë
+            //	          å°è£…æˆJSONæ ¼å¼å‘é€å›å®¢æˆ·ç«¯
             tojson<String, String> info_json = new tojson<>();
             info_json.put("Status", "-2");
             out.write(info_json.toString());

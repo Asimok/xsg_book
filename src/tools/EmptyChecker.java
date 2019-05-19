@@ -1,7 +1,7 @@
 package tools;
 
 /*
- * ÊäÈëÄÚÈİÎª¿Õ¼ì²â
+ * è¾“å…¥å†…å®¹ä¸ºç©ºæ£€æµ‹
  *
  * */
 public class EmptyChecker implements BaseFilter_Albert_Frank_Check {

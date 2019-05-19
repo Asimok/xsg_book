@@ -3,8 +3,8 @@ package tools;
 public class tounicode {
 
     /*
-     * gbEncoding(final String gbString) ÖĞÎÄ×ªunicode±àÂë
-     * decodeUnicode(final String dataStr) unicode±àÂë×ªÖĞÎÄ
+     * gbEncoding(final String gbString) ä¸­æ–‡è½¬unicodeç¼–ç 
+     * decodeUnicode(final String dataStr) unicodeç¼–ç è½¬ä¸­æ–‡
      *
      */
     public static String gbEncoding(final String gbString) {
@@ -21,7 +21,7 @@ public class tounicode {
     }
 
     /*
-     * decodeUnicode(final String dataStr) unicode±àÂë×ªÖĞÎÄ
+     * decodeUnicode(final String dataStr) unicodeç¼–ç è½¬ä¸­æ–‡
      */
     public static String decodeUnicode(final String dataStr) {
         int start = 0;
@@ -35,7 +35,7 @@ public class tounicode {
             } else {
                 charStr = dataStr.substring(start + 2, end);
             }
-            char letter = (char) Integer.parseInt(charStr, 16); // 16½øÖÆparseÕûĞÎ×Ö·û´®¡£
+            char letter = (char) Integer.parseInt(charStr, 16); // 16è¿›åˆ¶parseæ•´å½¢å­—ç¬¦ä¸²ã€‚
             buffer.append(new Character(letter).toString());
             start = end;
         }

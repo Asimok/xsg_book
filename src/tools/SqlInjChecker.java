@@ -1,7 +1,7 @@
 package tools;
 
 /*
- * 	SQLÓï¾ä·Ç·¨×¢Èë¼ì²â
+ * 	SQLè¯­å¥éæ³•æ³¨å…¥æ£€æµ‹
  *
  * */
 public class SqlInjChecker implements BaseFilter_Albert_Frank_Check {
@@ -12,11 +12,11 @@ public class SqlInjChecker implements BaseFilter_Albert_Frank_Check {
         if (sin.contains("'") || sin.contains("\"") || sin.contains(" ") || sin.contains("@") || sin.contains("(") || sin.contains(")") || sin.contains("*")) {
 
             System.out.println(getClass().getName() + "error");
-            System.out.println(sin + "    ·Ç·¨ÊäÈë£¬°üº¬·Ç·¨×¢Èë·ûºÅ");
+            System.out.println(sin + "    éæ³•è¾“å…¥ï¼ŒåŒ…å«éæ³•æ³¨å…¥ç¬¦å·");
             return false;
         }
         // TODO Auto-generated method stub
-        System.out.println(sin + "     ÊäÈëºÏ·¨");
+        System.out.println(sin + "     è¾“å…¥åˆæ³•");
         return true;
     }
 

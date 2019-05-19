@@ -7,18 +7,18 @@ import db.ConnDb;
 
 public class releaseRequirements {
 
-    //×¢²áĞÅÏ¢
+    //æ³¨å†Œä¿¡æ¯
 
 
 
     public static String addRequirement(String user, String telephone, String province,
                                 String city, String xian, String detailedad, String bookclass,
-                                String booknum, String suitage, String bookname) {
+                                String booknum, String suitage, String bookname,String detailbook) {
 
 
         String insql4 = "insert into requirements values ('" + user
-                + "','" + telephone + "','" + province + "'," + city + ",'" + xian + ",'" + detailedad + ",'" + xian + ",'" + bookclass + ",'"
-                + booknum + ",'" + suitage + ",'" + bookname + "')";
+                + "','" + telephone + "','" + province + "','" + city + "','" + xian + "','" + detailedad + "','"
+                + bookclass + "','"+ booknum + "','" + suitage + "','" +bookname + "','" + detailbook + "')";
         System.out.println(insql4);
         ConnDb connDb1 = new ConnDb();
         try {
@@ -31,14 +31,14 @@ public class releaseRequirements {
                 return "0";
             } else {
                 ps1.close();
-                System.out.println("1 ·¢²¼Ê§°Ü£¡  catchÅ×³ö");
+                System.out.println("1 å‘å¸ƒå¤±è´¥ï¼  catchæŠ›å‡º");
                 return "-1";
             }
 
         } catch (SQLException e) {
 
             e.printStackTrace();
-            System.out.println("2 ·¢²¼Ê§°Ü£¡  catchÅ×³ö");
+            System.out.println("2 å‘å¸ƒå¤±è´¥ï¼  catchæŠ›å‡º");
             return "-1";
         }
 

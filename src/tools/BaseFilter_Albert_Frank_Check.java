@@ -1,7 +1,7 @@
 package tools;
 
 /**
- * ÊäÈëĞÅÏ¢ºÏ·¨ĞÔ¼ì²â½Ó¿Ú
+ * è¾“å…¥ä¿¡æ¯åˆæ³•æ€§æ£€æµ‹æ¥å£
  */
 public interface BaseFilter_Albert_Frank_Check {
     public boolean doCheck(String sin);

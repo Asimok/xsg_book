@@ -1,8 +1,8 @@
 package tools;
 
 /*
- * dateToStamp(String s)  将日期变为时间戳
- * stampToDate(String s)  将时间戳变为日期
+ * dateToStamp(String s)  灏嗘棩鏈熷彉涓烘椂闂存埑
+ * stampToDate(String s)  灏嗘椂闂存埑鍙樹负鏃ユ湡
  * */
 
 import java.text.ParseException;

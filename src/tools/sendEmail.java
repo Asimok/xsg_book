@@ -1,8 +1,8 @@
 package tools;
 /*
- * ÏòÖ¸¶¨ÓÊÏä·¢ËÍÓÊ¼ş
- * ·¢¼şÈË  18182737073@163.com  Ê¶±ğÂë  °üº¬ÓÚ ¡°password.dat¡±
- * sendResetPasswordEmail(User user ,String userEmail)  ´«ÈëĞèÒªÖØÉèÃÜÂëµÄÔ±¹¤ºÅºÍÓÊÏä
+ * å‘æŒ‡å®šé‚®ç®±å‘é€é‚®ä»¶
+ * å‘ä»¶äºº  18182737073@163.com  è¯†åˆ«ç   åŒ…å«äº â€œpassword.datâ€
+ * sendResetPasswordEmail(User user ,String userEmail)  ä¼ å…¥éœ€è¦é‡è®¾å¯†ç çš„å‘˜å·¥å·å’Œé‚®ç®±
  *
  * */
 
@@ -27,21 +27,21 @@ public class sendEmail {
     private static final int ALIDM_SMTP_PORT = 25;
 
     /**
-     * ·¢ËÍÖØÉèÃÜÂëÁ´½ÓµÄÓÊ¼ş
+     * å‘é€é‡è®¾å¯†ç é“¾æ¥çš„é‚®ä»¶
      */
     public static void sendResetPasswordEmail(User user, String userEmail) {
         Session session = getSession();
         MimeMessage message = new MimeMessage(session);
         try {
-            message.setSubject("À´×ÔGoV");
+            message.setSubject("æ¥è‡ªGoV");
             message.setSentDate(new Date());
             message.setFrom(new InternetAddress(FROM));
             message.setRecipient(RecipientType.TO, new InternetAddress(userEmail));
-            //ÓÅÏÈ¼¶
+            //ä¼˜å…ˆçº§
             message.addHeader("X-Priority", "1");
 
-            message.setContent("GoV:ÖÇÄÜ»áÒéÊÒ Ô±¹¤ÃÜÂë¸ü¸Ä:<br/><a href='" + GenerateRepasswordLink.generateResetPwdLink(user) + "'>µã»÷¼ÌĞø½øĞĞ²Ù×÷</a>", "text/html;charset=utf-8");
-            // ·¢ËÍÓÊ¼ş  
+            message.setContent("GoV:æ™ºèƒ½ä¼šè®®å®¤ å‘˜å·¥å¯†ç æ›´æ”¹:<br/><a href='" + GenerateRepasswordLink.generateResetPwdLink(user) + "'>ç‚¹å‡»ç»§ç»­è¿›è¡Œæ“ä½œ</a>", "text/html;charset=utf-8");
+            // å‘é€é‚®ä»¶  
             Transport.send(message);
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,15 +51,15 @@ public class sendEmail {
     public static Session getSession() {
         Properties props = new Properties();
 
-        //ÍøÒ×µÄsmtp·şÎñÆ÷µØÖ·
+        //ç½‘æ˜“çš„smtpæœåŠ¡å™¨åœ°å€
         props.put("mail.smtp.host", "smtp.163.com");
-        //SSLSocketFactoryÀàµÄ¶Ë¿Ú
+        //SSLSocketFactoryç±»çš„ç«¯å£
         props.put("mail.smtp.socketFactory.port", "465");
-        //SSLSocketFactoryÀà
+        //SSLSocketFactoryç±»
         props.put("mail.smtp.socketFactory.class",
                 "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
-        //ÍøÒ×Ìá¹©µÄssl¼ÓÃÜ¶Ë¿Ú,QQÓÊÏäÒ²ÊÇ¸Ã¶Ë¿Ú
+        //ç½‘æ˜“æä¾›çš„sslåŠ å¯†ç«¯å£,QQé‚®ç®±ä¹Ÿæ˜¯è¯¥ç«¯å£
         props.put("mail.smtp.port", "465");
 
 

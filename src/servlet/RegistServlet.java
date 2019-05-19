@@ -1,5 +1,5 @@
 package servlet;
-/*×¢²áServlet*/
+/*æ³¨å†ŒServlet*/
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,62 +18,62 @@ import tools.FilterManage;
 import tools.tomd5;
 
 public class RegistServlet extends HttpServlet {
-    String isError;//isError ÅĞ¶Ï³ö´íĞÅÏ¢
+    String isError;//isError åˆ¤æ–­å‡ºé”™ä¿¡æ¯
 
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=utf-8");
-        /*ÉèÖÃ×Ö·û¼¯Îª'UTF-8'*/
+        /*è®¾ç½®å­—ç¬¦é›†ä¸º'UTF-8'*/
         request.setCharacterEncoding("utf-8");
-        System.out.println("Á¬½Ó³É¹¦·´À¡");// ²âÊÔÊÇ·ñ³É¹¦Á¬½Ó
-        StringBuffer json2 = new StringBuffer();// ×Ö·ûÁ÷
+        System.out.println("è¿æ¥æˆåŠŸåé¦ˆ");// æµ‹è¯•æ˜¯å¦æˆåŠŸè¿æ¥
+        StringBuffer json2 = new StringBuffer();// å­—ç¬¦æµ
         String line = null;
-        BufferedReader reader = request.getReader();// ¶ÁÈ¡Á÷
+        BufferedReader reader = request.getReader();// è¯»å–æµ
         while ((line = reader.readLine()) != null) {
-            json2.append(line);// ½ÓÊÜµÄÊÇJSON¸ñÊ½
+            json2.append(line);// æ¥å—çš„æ˜¯JSONæ ¼å¼
         }
 
-        System.out.println(json2);//µÃµ½µÄÊÇJSON¸ñÊ½
-        // °ÑµÃµ½µÄ×Ö·û´®·â×°ÎªJSON£¬ÔÙ»ñÈ¡ÀïÃæµÄ´«¹ıÀ´µÄ¼üÖµ¶Ô
+        System.out.println(json2);//å¾—åˆ°çš„æ˜¯JSONæ ¼å¼
+        // æŠŠå¾—åˆ°çš„å­—ç¬¦ä¸²å°è£…ä¸ºJSONï¼Œå†è·å–é‡Œé¢çš„ä¼ è¿‡æ¥çš„é”®å€¼å¯¹
 
         JSONObject jsonObject = JSONObject.fromObject(json2.toString());
-        /*Í¨¹ı¼üÖµ¶Ô»ñÈ¡²ÎÊı*/
+        /*é€šè¿‡é”®å€¼å¯¹è·å–å‚æ•°*/
 
-        String Password = tomd5.tomd5(jsonObject.getString("mima"));//Éú³ÉMD5±àÂë   MD5¼ÓÃÜ
-        String Name = jsonObject.getString("Name");  //Unicode½âÂëÖĞÎÄ×Ö·û
-        String Sex = jsonObject.getString("Sex");//»ñÈ¡ĞÔ±ğ
-        String PhoneNumber = jsonObject.getString("PhoneNumber");//»ñÈ¡µç»°ºÅ
-        String Email = jsonObject.getString("Email");//»ñÈ¡ÓÊÏä
+        String Password = tomd5.tomd5(jsonObject.getString("mima"));//ç”ŸæˆMD5ç¼–ç    MD5åŠ å¯†
+        String Name = jsonObject.getString("Name");  //Unicodeè§£ç ä¸­æ–‡å­—ç¬¦
+        String Sex = jsonObject.getString("Sex");//è·å–æ€§åˆ«
+        String PhoneNumber = jsonObject.getString("PhoneNumber");//è·å–ç”µè¯å·
+        String Email = jsonObject.getString("Email");//è·å–é‚®ç®±
 
-        /*¶ÔÔ±¹¤ºÅ½øĞĞÃüÁî×¢ÈëÒì³£¼ì²â*/
+        /*å¯¹å‘˜å·¥å·è¿›è¡Œå‘½ä»¤æ³¨å…¥å¼‚å¸¸æ£€æµ‹*/
         FilterManage check1 = new FilterManage();
         check1.addChecker(new EmployeeNumberChecker());
 
-        //Èç¹ûÔ±¹¤ºÅºÏ·¨
+        //å¦‚æœå‘˜å·¥å·åˆæ³•
 
 
-        //¿ÉÒÔ×¢²á  "status":"0" ·µ»Ø¸ø¿Í»§¶Ë½âÎö
-        //	isError ÅĞ¶Ï³ö´íĞÅÏ¢
+        //å¯ä»¥æ³¨å†Œ  "status":"0" è¿”å›ç»™å®¢æˆ·ç«¯è§£æ
+        //	isError åˆ¤æ–­å‡ºé”™ä¿¡æ¯
         isError = Regist.Regist(Password, Name, Sex, PhoneNumber, Email);
         System.out.println("isError  " + isError);
-        //µ÷ÓÃRegistÀà·½·¨  ×¢²á
+        //è°ƒç”¨Registç±»æ–¹æ³•  æ³¨å†Œ
         if (isError.trim().equals("0")) {
-            //Èç¹û×¢²á³É¹¦
-            System.out.println("Ğ´Èë³É¹¦");
+            //å¦‚æœæ³¨å†ŒæˆåŠŸ
+            System.out.println("å†™å…¥æˆåŠŸ");
             PrintWriter out = response.getWriter();
-            String info_json = "{\"status\":\"0\"}";//³É¹¦·µ»Ø0
+            String info_json = "{\"status\":\"0\"}";//æˆåŠŸè¿”å›0
             System.out.println(info_json);
             out.write(info_json);
             out.flush();
             out.close();
         } else {
-            //Ô±¹¤ºÅÒÑ×¢²á
+            //å‘˜å·¥å·å·²æ³¨å†Œ
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out = response.getWriter();
-//               ·â×°³ÉJSON¸ñÊ½·¢ËÍ»Ø¿Í»§¶Ë
-            String info_json = "{\"status\":\"-1\"}";//×¢²áÊ§°Ü£¡
+//               å°è£…æˆJSONæ ¼å¼å‘é€å›å®¢æˆ·ç«¯
+            String info_json = "{\"status\":\"-1\"}";//æ³¨å†Œå¤±è´¥ï¼
             System.out.println(info_json);
             out.write(info_json);
             out.flush();

@@ -1,15 +1,15 @@
 package tools;
 
 /*
- * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬Êı×ÖºÍ×ÖÄ¸
+ * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«æ•°å­—å’Œå­—æ¯
  *
  * */
 public class numAndWordTest {
     public static boolean numAndWordTest(String str) {
-        boolean isDigit1 = false;//¶¨ÒåÒ»¸öbooleanÖµ£¬ÓÃÀ´±íÊ¾ÊÇ·ñ°üº¬Êı×Ö
-        for (int i = 0; i < str.length(); i++) { //Ñ­»·±éÀú×Ö·û´®
-            if (Character.isDigit(str.charAt(i)) || Character.isLetter(str.charAt(i))) {     //ÓÃchar°ü×°ÀàÖĞµÄÅĞ¶ÏÊı×ÖµÄ·½·¨ÅĞ¶ÏÃ¿Ò»¸ö×Ö·û
-                //System.out.println("°üº¬Êı×Ö»ò×ÖÄ¸");
+        boolean isDigit1 = false;//å®šä¹‰ä¸€ä¸ªbooleanå€¼ï¼Œç”¨æ¥è¡¨ç¤ºæ˜¯å¦åŒ…å«æ•°å­—
+        for (int i = 0; i < str.length(); i++) { //å¾ªç¯éå†å­—ç¬¦ä¸²
+            if (Character.isDigit(str.charAt(i)) || Character.isLetter(str.charAt(i))) {     //ç”¨charåŒ…è£…ç±»ä¸­çš„åˆ¤æ–­æ•°å­—çš„æ–¹æ³•åˆ¤æ–­æ¯ä¸€ä¸ªå­—ç¬¦
+                //System.out.println("åŒ…å«æ•°å­—æˆ–å­—æ¯");
                 isDigit1 = true;
             } else {
                 isDigit1 = false;

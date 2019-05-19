@@ -1,6 +1,6 @@
 package tools;
 /*
- * tojson<K,V> 将任意键值对转换成json格式
+ * tojson<K,V> 灏嗕换鎰忛敭鍊煎杞崲鎴恓son鏍煎紡
  *
  * */
 

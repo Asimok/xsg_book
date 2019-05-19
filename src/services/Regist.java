@@ -27,14 +27,14 @@ public class Regist {
                 return "0";
             } else {
                 ps1.close();
-                System.out.println("1 ×¢²áÊ§°Ü£¡  catchÅ×³ö");
+                System.out.println("1 æ³¨å†Œå¤±è´¥ï¼  catchæŠ›å‡º");
                 return "-1";
             }
 
         } catch (SQLException e) {
 
             e.printStackTrace();
-            System.out.println("2 ×¢²áÊ§°Ü£¡  catchÅ×³ö");
+            System.out.println("2 æ³¨å†Œå¤±è´¥ï¼  catchæŠ›å‡º");
             return "-1";
         }
 

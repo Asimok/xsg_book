@@ -1,7 +1,7 @@
 package tools;
 
 /*
- *mydays(String days,int num)  ¶Ô´«ÈëµÄÈÕÆÚ¼ÓÖ¸¶¨ÌìÊı  ²¢ÒÔ¹Ì¶¨¸ñÊ½·µ»Ø
+ *mydays(String days,int num)  å¯¹ä¼ å…¥çš„æ—¥æœŸåŠ æŒ‡å®šå¤©æ•°  å¹¶ä»¥å›ºå®šæ ¼å¼è¿”å›
  *
  * */
 

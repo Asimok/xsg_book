@@ -1,7 +1,7 @@
 package tools;
 
 /*
- * nowdateToString() 将指定的的日期类型数据转换成字符串并返回
+ * nowdateToString() 灏嗘寚瀹氱殑鐨勬棩鏈熺被鍨嬫暟鎹浆鎹㈡垚瀛楃涓插苟杩斿洖
  *
  * */
 

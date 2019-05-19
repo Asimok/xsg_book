@@ -1,7 +1,7 @@
 package tools;
 
 /*
- * ¿ÕÖ¸ÕëÒì³£¼ì²â
+ * ç©ºæŒ‡é’ˆå¼‚å¸¸æ£€æµ‹
  *
  * */
 public class NullptrChecker implements BaseFilter_Albert_Frank_Check {
