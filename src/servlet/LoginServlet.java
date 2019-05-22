@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("连接成功反馈  LoginServlet");// 测试是否成功连接
         response.setContentType("text/html;charset=utf-8");
         /*设置字符集为'UTF-8'*/
         request.setCharacterEncoding("utf-8");

@@ -2,12 +2,13 @@
   <artifact type="exploded-war" name="xsg_book:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/xsg_book_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="xsg_book/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="xsg_book" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="xsg_book/web/Web2" />
+      <element id="javaee-facet-resources" facet="xsg_book/web/Web" />
     </root>
   </artifact>
 </component>
