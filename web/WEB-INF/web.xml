@@ -21,6 +21,14 @@
         <servlet-name>releaseRequirements</servlet-name>
         <servlet-class>servlet.releaseRequirementsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>mineServlet</servlet-name>
+        <servlet-class>servlet.mineServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>main_interfaceServlet</servlet-name>
+        <servlet-class>servlet.main_interfaceServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistServlet</servlet-name>
         <url-pattern>/RegistServlet</url-pattern>
@@ -28,6 +36,14 @@
     <servlet-mapping>
         <servlet-name>releaseRequirements</servlet-name>
         <url-pattern>/releaseRequirements</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mineServlet</servlet-name>
+        <url-pattern>/mineServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>main_interfaceServlet</servlet-name>
+        <url-pattern>/main_interfaceServlet</url-pattern>
     </servlet-mapping>
 
 

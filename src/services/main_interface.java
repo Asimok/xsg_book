@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.ConnDb;
-import tools.tojson;
 
-public class mine {
-    public static List<requirements_info> selectinfo(String user1, String tel) {
+public class main_interface {
+    public static List<requirements_info> selectallinfo() {
 
 
-        String sql = "select * from requirements  where  user = '" + user1 + "' and telephone ='"+tel+"'";
+        String sql = "select * from requirements ";
         System.out.println(sql);
         //查询该账户信息
         ConnDb connDb = new ConnDb();
@@ -39,25 +38,25 @@ public class mine {
                     String bookname   = rs.getString("bookname");
                     String detailbook = rs.getString("detailbook");
 
-                    rsmeg.setUser           (user       );
-                    rsmeg.setTelephone      (telephone      );
-                    rsmeg.setProvince       (province       );
-                    rsmeg.setCity           (city           );
-                    rsmeg.setXian           (xian           );
-                    rsmeg.setDetailedad     (detailedad     );
-                    rsmeg.setBookclass      (bookclass      );
-                    rsmeg.setBooknum        (booknum        );
-                    rsmeg.setSuitage        (suitage        );
-                    rsmeg.setBookname       (bookname       );
-                    rsmeg.setDetailbook     (detailbook     );
+                    rsmeg.setUser           (user);
+                    rsmeg.setTelephone (telephone);
+                    rsmeg.setProvince       (province);
+                    rsmeg.setCity           (city);
+                    rsmeg.setXian           (xian);
+                    rsmeg.setDetailedad          (detailedad);
+                    rsmeg.setBookclass      (bookclass );
+                    rsmeg.setBooknum        (booknum   );
+                    rsmeg.setSuitage        (suitage   );
+                    rsmeg.setBookname       (bookname  );
+                    rsmeg.setDetailbook     (detailbook);
 
                     info.add(rsmeg);
 
-              System.out.println("info  "+info.get(0).getCity());
+
             }
 
             ps.close();
-
+            System.out.println("info  "+info.get(0).getCity());
            return info;
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -68,7 +67,7 @@ public class mine {
     }
 
 
-    public static List<requirements_info> selectinfo_1(String user1, String tel) {
+    public static List<requirements_info> selectallinfo_1() {
         ArrayList<requirements_info> info=new ArrayList<requirements_info>();
                 requirements_info rsmeg= new requirements_info();
                 rsmeg.setUser      ("-1");

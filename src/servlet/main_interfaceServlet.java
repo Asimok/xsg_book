@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import services.Login;
+import services.main_interface;
 import services.mine;
 import services.requirements_info;
 import tools.tojson;
@@ -23,7 +24,7 @@ import tools.tomd5;
  * 登录 servlet
  *
  * */
-public class mineServlet extends HttpServlet {
+public class main_interfaceServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
@@ -33,20 +34,8 @@ public class mineServlet extends HttpServlet {
         /*设置字符集为'UTF-8'*/
         request.setCharacterEncoding("utf-8");
         System.out.println("连接成功反馈  LoginServlet");// 测试是否成功连接
-        StringBuffer json1 = new StringBuffer();// 字符流
-        String line = null;
-        BufferedReader reader = request.getReader();// 读取流
-        while ((line = reader.readLine()) != null) {
-            json1.append(line);// 接受的是JSON格式
-        }
 
-        System.out.println("传入的" + json1);//得到的是JSON格式
-
-        JSONObject jsonObject = JSONObject.fromObject(json1.toString());
-        String user = jsonObject.getString("user");
-        String telephone = jsonObject.getString("telephone");
-
-        List<requirements_info> infos=mine.selectinfo(user,telephone);
+        List<requirements_info> infos= main_interface.selectallinfo();
 
         if(!(null == infos || infos.size() ==0 )) {
             response.setContentType("text/html;charset=utf-8");
@@ -69,7 +58,7 @@ public class mineServlet extends HttpServlet {
         }
         else
         {
-            List<requirements_info> infos1=mine.selectinfo_1(user,telephone);
+            List<requirements_info> infos1=main_interface.selectallinfo_1();
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out = response.getWriter();
             //	          封装成JSON格式发送回客户端
@@ -90,7 +79,6 @@ public class mineServlet extends HttpServlet {
             out.close();
 
         }
-
 
     }
 
